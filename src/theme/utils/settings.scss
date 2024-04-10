@@ -1,0 +1,96 @@
+
+$colors: (
+    'white1': $white1,
+    'white2': $white2,
+    'black1': $black1,
+    'grey1': $grey1,
+    'grey2': $grey2,
+    'blue1': $blue1,
+    'blue2': $blue2,
+    'pink1': $pink1,
+    'pink2': $pink2,
+);
+
+$font-weights: (
+    'bold': 500,
+    'bolder': 900,
+    'normal': 'normal',
+);
+
+$font-sizes: (
+    's': 12px,
+    'm': 14px,
+    'l': 16px,
+    'xl': 20px,
+    'xxl': 24px,
+    'xxxl': 28px,
+);
+
+$displays: (
+    'block',
+    'inline-block',
+    'flex',
+);
+
+$flex-direction: (
+    'row',
+    'column',
+);
+
+$align-items: (
+    'center',
+    'flex-end',
+    'flex-start',
+    'end',
+    'start',
+    'baseline',
+);
+
+$justify-content: (
+    'center',
+    'flex-end',
+    'flex-start',
+    'space-around',
+    'space-between',
+    'space-evenly'
+);
+
+$justify-self: (
+    'center'
+);
+
+$spaces: (
+    'padding': 20px,
+    'margin': 20px,
+);
+
+$border-types: (
+    'solid'
+);
+
+$space-breaks: (
+    'triple': 3,
+    'double': 2,
+    'oneandhalf': calc(3/2),
+    'oneandquarter': calc(5/4),
+    'main': 1,
+    'half': calc(1/2),
+    'quarter': calc(1/4),
+);
+
+$cursor: (
+    'pointer',
+);
+
+$overflow: (
+    'types': (
+        'overflow',
+        'overflow-x',
+        'overflow-y',
+    ),
+    'properties': (
+        'auto',
+        'hidden',
+        'scroll'
+    )
+);

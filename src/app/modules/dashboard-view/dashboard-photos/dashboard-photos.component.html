@@ -1,0 +1,16 @@
+<div *ngIf="elements" class="c-article-list u-overflow-y-auto" [ngStyle]="{ 'max-height': height + 'px' }" (scroll)="onScroll($event)">
+    <div *ngFor="let element of elements; trackBy: photoTrackBy" class="c-article-item u-display-flex u-flex-row u-border-solid-grey1 u-margin-bottom">
+        <div class="c-article-item--title">
+            <img class="u-background-grey2 u-display-flex u-items-center u-content-center" [src]="element.thumbnailUrl" height=150 width=150 alt="No Picture">
+        </div>
+        <div class="c-article-item--content u-display-flex u-flex-row u-content-space-between fill-x">
+            <div class="u-padding">
+                <div>[Id: '{{ element.id }}' ]</div>
+                <div>{{ element.title }}</div>
+            </div>
+            <div class="c-article-item--action u-background-grey2 u-display-flex u-items-center u-content-center" style="min-width: 150px; min-height: 150px;">
+                <span class="icon-trash" (click)="onDeletePhoto(element)"></span>
+            </div>
+        </div>
+    </div>
+</div>

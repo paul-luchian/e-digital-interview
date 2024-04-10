@@ -1,0 +1,14 @@
+<header class="c-header">
+    <input type="checkbox" id="burger-menu">
+    <div class="c-header--logo">
+        <label for="burger-menu" class="icon-burger-menu-inverted"></label>
+        <a *ngIf="config?.logo" class="c-header--logo__text" [routerLink]="config!.logo!.path">{{ config?.logo?.text }}</a>
+    </div>
+    <nav class="c-nav">
+        <ul>
+            <li class="c-nav--item" *ngFor="let item of config?.items">
+                <a [routerLink]="item.path" routerLinkActive="c-nav--item__active">{{ item.title }}</a>
+            </li>
+        </ul>
+    </nav>
+</header>

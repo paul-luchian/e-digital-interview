@@ -1,0 +1,28 @@
+
+/* COMPONENTS */
+
+// HEADER
+$c-header-height:                       44px;
+$c-header-padding:                      0px 0px 0px 10%;
+$c-header-background:                   $black1;
+
+$c-header-logo-color:                   $white1;
+$c-header-logo-padding:                 0px 30px 0px 30px;
+$c-header-logo-font-size:               20px;
+$c-header-logo-font-weight:             bold;
+$c-header-logo-font-family:             "Lucida Console", "Courier New", monospace;
+$c-header-logo-padding:                 0px 30px 0px 0px;
+
+// NAVBAR
+$c-nav-item-color:                      $white1;
+$c-nav-item-hover-background:           $grey1;
+$c-nav-item-border-color:               $white1;
+$c-nav-item-border-size:                0.5px;
+$c-nav-item-link-padding:               14px 7px;
+
+// FOOTER
+$c-footer-height:                       44px;
+$c-footer-padding:                      0px 0px 0px 10%;
+$c-footer-background:                   $grey1;
+$c-footer-label-color:                  $white1;
+$c-footer-label-font-size:              12px;

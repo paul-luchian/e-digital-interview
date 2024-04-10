@@ -1,0 +1,77 @@
+
+@import './settings.scss';
+
+$orientation: ('left', 'right', 'top', 'bottom');
+
+@mixin space-utils($spaces, $space-breaks) {
+    @each $spaceName, $spaceValue in $spaces {
+        @each $breakName, $breakValue in $space-breaks {
+
+            @if $breakName == 'main' {
+                $breakName: '';
+            }
+            .u-#{$breakName}#{$spaceName} {
+                #{$spaceName}: calc(#{$spaceValue} * #{$breakValue});
+            }
+            $sep: '-';
+            @each $direction in $orientation {
+                .u-#{$breakName}#{$spaceName}-#{$direction} {
+                    #{$spaceName}-#{$direction}: calc(#{$spaceValue} * #{$breakValue});
+                }
+            }
+        }
+    }
+};
+
+@mixin border-utils($property, $set, $colors, $identifier) {
+    @each $type in $set {
+        @each $breakName, $breakValue in $space-breaks {
+            @if $breakName == 'main' {
+                $breakName: '';
+            }
+            @each $colorName, $colorValue in $colors {
+                .u-#{$breakName}#{$identifier}-#{$type}-#{$colorName} {
+                    #{$property}: #{$breakValue}px #{$type} #{$colorValue}; 
+                }
+                @each $direction in $orientation {
+                    .u-#{$breakName}#{$identifier}-#{$type}-#{$colorName}-#{$direction} {
+                        #{$property}-#{$direction}: #{$breakValue}px #{$type} #{$colorValue}; 
+                    }
+                }
+            }
+        }
+
+    }
+};
+
+@mixin main-utils($property, $set, $identifier) {
+    @each $name, $value in $set {
+        $sep: '-';
+        @if not $value {
+            $value: $name;
+        }
+
+        .u-#{$identifier}#{$sep}#{$name} {
+            #{$property}: #{$value};
+        }
+    } 
+};
+
+@include main-utils('background-color', $colors, 'background');
+@include main-utils('color', $colors, 'color');
+@include main-utils('font-weight', $font-weights, 'font-weight');
+@include main-utils('font-size', $font-sizes, 'font-size');
+@include main-utils('display', $displays, 'display');
+@include main-utils('flex-direction', $flex-direction, 'flex');
+@include main-utils('align-items', $align-items, 'items');
+@include main-utils('justify-content', $justify-content, 'content');
+@include main-utils('justify-self', $justify-self, 'self');
+@include main-utils('cursor', $cursor, 'cursor');
+@include main-utils('cursor', $cursor, 'cursor');
+
+@each $overflowType in map-get($overflow, 'types') {
+    @include main-utils($overflowType, map-get($overflow, 'properties'), $overflowType);
+}
+
+@include space-utils($spaces, $space-breaks);
+@include border-utils('border', $border-types, $colors, 'border');

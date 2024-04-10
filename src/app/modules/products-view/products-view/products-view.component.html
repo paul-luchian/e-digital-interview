@@ -1,0 +1,41 @@
+<div class="c-products u-background-white2 u-padding">
+    <ng-container *ngIf="isLoading">
+        <div class="u-display-flex u-flex-column u-items-center u-content-center">
+            <div class="u-padding-bottom u-font-weight-bolder">Loading ...</div>
+            <span class="icon-loader"></span>
+        </div>
+    </ng-container>
+    <ng-container *ngIf="!isLoading">
+        <div class="c-products-filter u-background-white1 u-padding u-margin-right">
+            <div>Filter section</div>
+            <div class="c-products-filter--list u-padding-top">
+                <span>Filter1</span>
+                <span>Filter2</span>
+                <span>Filter3</span>
+            </div>
+        </div>
+    
+        <div class="c-products-container" [ngClass]="{ 'fill-x': viewType === 'list' }">
+            <div class="c-products-container--options u-padding u-background-white1 u-margin-bottom">
+                <div *ngIf="totalNoProducts !== undefined" class="u-display-flex u-items-center">{{ totalNoProducts }} Results</div>
+                <div class="u-display-flex u-flex-row">
+                    <a
+                        href="javascript:void(0)" class="u-halfpadding u-display-flex u-items-center u-content-center"
+                        [ngClass]="{'u-background-grey2': viewType === 'list'}" (click)="viewType = 'list'"
+                    >
+                        <span class="icon-list"></span>
+                    </a>
+                    <a
+                        href="javascript:void(0)" class="u-halfpadding u-display-flex u-items-center u-content-center"
+                        [ngClass]="{'u-background-grey2': viewType === 'grid'}" (click)="viewType = 'grid'"
+                    >
+                        <span class="icon-grid"></span>
+                    </a>
+                </div>
+            </div>
+            <div [ngClass]="{ 'c-products-container--list': viewType === 'list', 'c-products-container--grid': viewType === 'grid' }">
+                <app-product-card [config]="product" [display]="viewType" *ngFor="let product of products"></app-product-card>
+            </div>
+        </div>
+    </ng-container>
+</div>

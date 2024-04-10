@@ -1,0 +1,27 @@
+<article
+    *ngIf="config" class="c-product-card"
+    [ngClass]="{ 'c-product-card--list': display === 'list', 'c-product-card--grid': display === 'grid' }"
+>
+    <div class="c-product-card--image u-cursor-pointer" (click)="onOpenProduct()">
+        <div class="c-product-card--favourites">
+            <span
+                [ngClass]="favIcon ? 'icon-heart' : 'icon-heart-inverted'" (mouseenter)="favIcon = !favIcon" (mouseleave)="favIcon = !favIcon"
+                (click)="onAddToFavourites($event)"
+            ></span>
+        </div>
+        <img [src]="config.picture" height=250 width=370 alt="No Picture">
+    </div>
+    <div class="u-padding u-display-flex u-flex-column">
+        <div class="u-halfpadding-bottom u-cursor-pointer" (click)="onOpenProduct()">{{ config.name }}</div>
+        <div class="u-display-flex u-items-center u-halfpadding-bottom">
+            <span class="u-display-inline-block u-quarterpadding-right">{{ config.size }}</span>
+            <span *ngFor="let item of [].constructor(config.rating)" class="icon-star u-display-inline-block"></span>
+        </div>
+
+        <div class="u-display-flex u-flex-row u-padding-bottom u-items-baseline">
+            <div class="u-color-blue2 u-font-weight-bolder u-padding-right u-font-size-xxxl">{{ config.price }}</div>
+            <div class="u-color-grey1 u-padding-right" style="text-decoration: line-through">{{ config.oldPrice }}</div>
+            <div class="u-color-pink2" *ngIf="config.savings">You save {{ config.savings }}</div>
+        </div>
+    </div>
+</article>

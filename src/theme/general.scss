@@ -1,0 +1,23 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.content-section {
+    height: calc(100vh - #{$c-header-height} - #{$c-footer-height});
+    overflow-y: auto;
+}
+
+.fill-x {
+    width: 100%;
+}
+
+.fill-y {
+    height: 100%;
+}
+
+.fill-x-y {
+    width: 100%;
+    height: 100%;
+}

@@ -1,0 +1,27 @@
+/* RESET ALL DEFAULT STYLES */
+@import './reset.scss';
+/*  */
+
+/* VARIABLES */
+@import './colors.scss';
+@import './variables.scss';
+@import './z-index.scss';
+/*  */
+
+
+/* OTHER STYLES */
+@import './icons.scss';
+@import './utils/utils.scss';
+/*  */
+
+
+/* COMPONENTS STYLE FILES */
+@import './components/header.scss';
+@import './components/footer.scss';
+@import './components/article.scss';
+/*  */
+
+
+/* GENERAL STYLE FILES */
+@import './general.scss';
+/*  */

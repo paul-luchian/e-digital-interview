@@ -1,0 +1,17 @@
+.c-footer {
+    height: $c-footer-height;
+    background-color: $c-footer-background;
+    padding: $c-footer-padding;
+    display: flex;
+    align-items: center;
+
+    @media(max-width: 480px) {
+        padding: 0px;
+        justify-content: center;
+    }
+
+    &--label {
+        color: $c-footer-label-color;
+        font-size: $c-footer-label-font-size;
+    }
+}

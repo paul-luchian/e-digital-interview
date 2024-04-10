@@ -1,0 +1,38 @@
+@import '../../../../theme/colors.scss';
+
+.c-product-card {
+    position: relative;
+    box-shadow: 5px 5px 10px $grey2;
+    background-color: $white1;
+    justify-self: center;
+    &--list {
+        display: flex;
+        flex-direction: row;
+        @media(min-width: 0px) and (max-width: 1000px) {
+            display: flex;
+            flex-direction: column;
+        }
+    }
+    &--grid {
+        display: flex;
+        flex-direction: column;
+    }
+
+    &--image {
+        position: relative;
+    }
+
+    &--favourites {
+        position: absolute;
+        right: 10px;
+        top: 10px;
+        height: 40px;
+        width: 40px;
+        background-color: $white1;
+        border-radius: 50%;
+        display: inline-block;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+}
